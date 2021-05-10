@@ -18,6 +18,8 @@
      (pp/pprint data)
      (pp/pprint transform)
 
+     ;; Also find the subset of keys which have valid values
+     ;; I need a validator filter map
      (pp/pprint (set/union (into #{} (keys data))
                            (into #{} (keys transform))))
 
