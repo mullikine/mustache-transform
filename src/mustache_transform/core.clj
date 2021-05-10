@@ -20,9 +20,12 @@
 
      ;; Also find the subset of keys which have valid values
      ;; I need a validator filter map
-     ;; https://stackoverflow.com/q/15626542
+
      (pp/pprint (set/union (into #{} (keys data))
                            (into #{} (keys transform))))
+
+     ;; Transform the map with a map of transformations
+     ;; https://stackoverflow.com/q/15626542
 
      ;; Take the union of both map keys vectors to find the subset
      ;; Get the values of both maps according to that vector
