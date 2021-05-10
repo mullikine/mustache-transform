@@ -1,7 +1,8 @@
 (ns mustache-transform.core
   (:gen-class)
   (:require [clj-yaml.core :as yaml]
-            [clojure.pprint :as pp]))
+            [clojure.pprint :as pp]
+            [clojure.set :as set]))
 
 (use '[clojure.java.shell :only [sh]])
 
@@ -17,8 +18,8 @@
      (pp/pprint data)
      (pp/pprint transform)
 
-     (pp/pprint (union (keys data)
-                       (keys transform)))
+     (pp/pprint (set/union (into #{} (keys data))
+                           (into #{} (keys transform))))
 
      ;; Take the union of both map keys vectors to find the subset
      ;; Get the values of both maps according to that vector
