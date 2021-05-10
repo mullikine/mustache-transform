@@ -12,12 +12,14 @@
          data (yaml/parse-string (slurp data-fp))
          transform (yaml/parse-string (slurp transform-fp))]
      (println template)
+     ;; [[tcq:clojure select multiple keys from map]]
+     ;; (select-keys {:a 1 :b 2 :c 3} [:a :b])
      (pp/pprint data)
      (pp/pprint transform)
 
      (doseq [keyval data]
        (let [tr (get transform (first keyval))]
          (if tr
-           (assoc data tr (sh tr :in (get data tr))))))
+           (assoc! data tr (sh tr :in (get data tr))))))
 
      (println template-fp data-fp transform-fp))))
