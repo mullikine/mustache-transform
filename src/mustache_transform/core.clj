@@ -17,6 +17,13 @@
      (pp/pprint data)
      (pp/pprint transform)
 
+     ;; Take the union of both map keys vectors to find the subset
+     ;; Get the values of both maps according to that vector
+     ;; Map / zip? over the keys vector and both values vectors
+
+     ;; I think I want interleave
+     ;; https://clojuredocs.org/clojure.core/interleave
+
      (doseq [keyval data]
        (let [tr (get transform (first keyval))]
          (if tr
