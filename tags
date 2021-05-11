@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/d5bcb52b/
+-main	src/mustache_transform/core.clj	/^(defn -main$/;"	f	namespace:mustache-transform.core
+0.1.0 - 2021-05-08	CHANGELOG.md	/^## 0.1.0 - 2021-05-08$/;"	s
+Added	CHANGELOG.md	/^### Added$/;"	S
+Any Other Sections	README.md	/^### Any Other Sections$/;"	S
+Bugs	README.md	/^### Bugs$/;"	S
+Change Log	CHANGELOG.md	/^# Change Log$/;"	c
+Changed	CHANGELOG.md	/^### Changed$/;"	S
+Examples	README.md	/^## Examples$/;"	s
+Fixed	CHANGELOG.md	/^### Fixed$/;"	S
+Installation	README.md	/^## Installation$/;"	s
+Introduction to mustache-transform	doc/intro.md	/^# Introduction to mustache-transform$/;"	c
+License	README.md	/^## License$/;"	s
+Might be Useful	README.md	/^### Might be Useful$/;"	S
+Options	README.md	/^## Options$/;"	s
+Removed	CHANGELOG.md	/^### Removed$/;"	S
+That You Think	README.md	/^### That You Think$/;"	S
+Usage	README.md	/^## Usage$/;"	s
+[0.1.1] - 2021-05-08	CHANGELOG.md	/^## [0.1.1] - 2021-05-08$/;"	s
+[Unreleased]	CHANGELOG.md	/^## [Unreleased]$/;"	s
+artifactId	target/default/classes/META-INF/maven/mustache-transform/mustache-transform/pom.properties	/^artifactId=mustache-transform$/;"	k
+groupId	target/default/classes/META-INF/maven/mustache-transform/mustache-transform/pom.properties	/^groupId=mustache-transform$/;"	k
+mustache-transform	README.md	/^# mustache-transform$/;"	c
+mustache-transform.core	src/mustache_transform/core.clj	/^(ns mustache-transform.core$/;"	n
+mustache-transform.core-test	test/mustache_transform/core_test.clj	/^(ns mustache-transform.core-test$/;"	n
+revision	target/default/classes/META-INF/maven/mustache-transform/mustache-transform/pom.properties	/^revision=c4b4441017e3911da1c47107eb3e4720b6d82276$/;"	k
+version	target/default/classes/META-INF/maven/mustache-transform/mustache-transform/pom.properties	/^version=0.1.0-SNAPSHOT$/;"	k
