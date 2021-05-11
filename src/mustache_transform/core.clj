@@ -6,7 +6,6 @@
 
 (use '[clojure.java.shell :only [sh]])
 
-
 (defn transform-map [m fm]
   (into {} (map (fn [[k v]]
                   [k (apply (first v)
@@ -16,6 +15,8 @@
 
 ;; lein run $HOME/blog/posts/irparse.mermaid $HOME/blog/posts/mermaiddata-raw.yaml $HOME/blog/posts/transformations.yaml
 ;; (mu (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml"))
+
+
 (defn -main
   "I don't do a whole lot ... yet."
   ([template-fp data-fp transform-fp & args]
@@ -51,10 +52,10 @@
      ;;     (if tr
      ;;       (assoc! data tr (sh tr :in (get data tr))))))
 
-     
-(transform-map data transformations)
 
-(println template-fp data-fp transform-fp))))
+     (transform-map data transformations)
+
+     (println template-fp data-fp transform-fp))))
 
 
 (defn test-main
