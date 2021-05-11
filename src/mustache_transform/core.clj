@@ -6,10 +6,13 @@
 
 (use '[clojure.java.shell :only [sh]])
 
+;; (transform-map {:a "a"} {:a "tr '[:lower:]' '[:upper:]'"})
 (defn transform-map [m fm]
-  (into {} (map (fn [[k v]]
-                  [k (:out (sh v :in (k m)))])
-                fm)))
+  (into {}
+        (map
+         (fn [[k v]]
+           [k (:out (sh "sh" "-c" v :in (k m)))])
+         fm)))
 
 
 ;; lein run $HOME/blog/posts/irparse.mermaid $HOME/blog/posts/mermaiddata-raw.yaml $HOME/blog/posts/transformations.yaml
@@ -34,6 +37,8 @@
      (pp/pprint (set/union (into #{} (keys data))
                            (into #{} (keys transform))))
 
+     (pp/pprint (transform-map data transform))
+
      ;; ((fn [[k v]] k) (first transformations))
 
      ;; Transform the map with a map of transformations
@@ -52,14 +57,18 @@
      ;;       (assoc! data tr (sh tr :in (get data tr))))))
 
 
-     (transform-map data transformations)
+     (transform-map data transform)
 
      (println template-fp data-fp transform-fp))))
 
 
+(deftrace test-transform-map
+  ""
+  []
+  (tvt (transform-map {:a "a"} {:a "tr '[:lower:]' '[:upper:]'"})))
+
 (defn test-main
   ""
   []
-  (tv (with-out-str
-        (mu (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml")))))
+  (tvt (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml")))
 
