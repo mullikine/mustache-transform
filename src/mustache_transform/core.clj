@@ -34,6 +34,8 @@
      (pp/pprint (set/union (into #{} (keys data))
                            (into #{} (keys transform))))
 
+     ;; ((fn [[k v]] k) (first transformations))
+
      ;; Transform the map with a map of transformations
      ;; https://stackoverflow.com/q/15626542
 
@@ -49,7 +51,10 @@
      ;;     (if tr
      ;;       (assoc! data tr (sh tr :in (get data tr))))))
 
-     (println template-fp data-fp transform-fp))))
+     
+(transform-map data transformations)
+
+(println template-fp data-fp transform-fp))))
 
 
 (defn test-main
