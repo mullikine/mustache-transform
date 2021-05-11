@@ -44,9 +44,9 @@
      (println template-fp data-fp transform-fp))))
 
 
-(defn test-main
-  ""
-  []
-  (tv (with-out-str
-        (mu (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml")))))
+;; (defn test-main
+;;   ""
+;;   []
+;;   (tv (with-out-str
+;;         (mu (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml")))))
 
