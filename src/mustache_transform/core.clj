@@ -62,12 +62,13 @@
      (println template-fp data-fp transform-fp))))
 
 
-(deftrace test-transform-map
+(deftrace test-transform-mapj
   ""
   []
-  (tvt (transform-map {:a "a"} {:a "tr '[:lower:]' '[:upper:]'"})))
+  (tv (pps
+       (transform-map {:a "a"} {:a "tr '[:lower:]' '[:upper:]'"}))))
 
-(defn test-main
+(deftrace test-main
   ""
   []
   (tvt (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml")))
