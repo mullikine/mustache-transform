@@ -6,6 +6,8 @@
 
 (use '[clojure.java.shell :only [sh]])
 
+;; lein run $HOME/blog/posts/irparse.mermaid $HOME/blog/posts/mermaiddata-raw.yaml $HOME/blog/posts/transformations.yaml
+;; (mu (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml"))
 (defn -main
   "I don't do a whole lot ... yet."
   ([template-fp data-fp transform-fp & args]
@@ -40,3 +42,11 @@
      ;;       (assoc! data tr (sh tr :in (get data tr))))))
 
      (println template-fp data-fp transform-fp))))
+
+
+(defn test-main
+  ""
+  []
+  (tv (with-out-str
+        (mu (-main "$HOME/blog/posts/irparse.mermaid" "$HOME/blog/posts/mermaiddata-raw.yaml" "$HOME/blog/posts/transformations.yaml")))))
+
