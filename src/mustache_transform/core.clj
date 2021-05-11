@@ -8,8 +8,7 @@
 
 (defn transform-map [m fm]
   (into {} (map (fn [[k v]]
-                  [k (apply (first v)
-                            ((apply juxt (rest v)) m))])
+                  [k (:out (sh v :in (k m)))])
                 fm)))
 
 
